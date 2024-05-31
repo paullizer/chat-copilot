@@ -72,7 +72,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # Set up deployment command as a string
-$azWebAppCommand = "az webapp deployment source config-zip --resource-group $ResourceGroupName --name $webApiName --src $PackageFilePath"
+$azWebAppCommand = "az webapp deployment source config-zip --resource-group $ResourceGroupName --name $webApiName --src `"$PackageFilePath`""
 
 # Check if DeploymentSlot parameter was passed
 $origins = @("$webApiUrl")
